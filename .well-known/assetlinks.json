@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.jinaplus.weather",
+    "sha256_cert_fingerprints":
+    ["92:B6:6F:21:31:20:F3:9F:89:32:07:86:12:9E:31:19:BE:BA:64:CF:07:C4:02:D1:06:1D:C2:59:B8:71:1A:AD"]
+  }
+}]
