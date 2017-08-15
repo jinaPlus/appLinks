@@ -36,7 +36,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void handleIntent() {
         Intent appLinkIntent = getIntent();
-        Collections.addAll(localAarray, new String[]{"서울", "인천", "부산", "경기", "대구", "대전", "부산", "경주"});
+        Collections.addAll(localAarray, new String[]{"seoul", "inchoen", "busan"});
         // ATTENTION: This was auto-generated to handle app links.
         String appLinkAction = appLinkIntent.getAction();
         Uri appLinkData = appLinkIntent.getData();
@@ -48,7 +48,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void showWeather(String local) {
         if(localAarray.contains(local)) {
-            webView.loadUrl("https://www.google.co.kr/search?q=날씨+" + local);
+            webView.loadUrl("https://www.google.co.kr/search?q=weather+" + local);
         } else {
             Toast.makeText(this, local + "은(는) 지원하지 않는 지역입니다.", Toast.LENGTH_SHORT).show();
         }

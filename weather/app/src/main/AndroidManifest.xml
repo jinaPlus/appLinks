@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jinaplus.weather">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -38,7 +40,7 @@
                 <data
                     android:host="jinaplus.github.io"
                     android:scheme="http"
-                    android:pathPrefix="/search/" />
+                    android:pathPrefix="/search" />
             </intent-filter>
         </activity>
     </application>
