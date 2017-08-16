@@ -44,6 +44,6 @@
     <string name="kakaolink_applink">앱으로 이동</string>
     <string name="kakaolink_weblink">웹사이트로 이동</string>
     <string name="kakaolink_appbutton">앱으로 이동</string>
-    <string name="kakaolink_webbutton">카카오 홈페이지로 이동</string>
+    <string name="kakaolink_webbutton">웹사이트로 이동</string>
     <string name="send_message">아래 메시지를 보내시겠습니까?</string>
 </resources>

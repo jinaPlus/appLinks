@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jinaplus.weather">
+<manifest package="com.jinaplus.weather"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -39,22 +39,29 @@
 
                 <data
                     android:host="jinaplus.github.io"
-                    android:scheme="http"
-                    android:pathPrefix="/search"/>
+                    android:pathPrefix="/search"
+                    android:scheme="http"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".KakaoLinkMainActivity"
-                  android:launchMode="singleTask">
+        <activity
+            android:name=".KakaoLinkMainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="@string/kakao_scheme" android:host="@string/kakaolink_host" />
+
+                <data
+                    android:host="@string/kakaolink_host"
+                    android:scheme="@string/kakao_scheme"/>
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key"/>
     </application>
 
 </manifest>

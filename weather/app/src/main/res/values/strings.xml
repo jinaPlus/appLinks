@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">앱인덱싱 샘플App</string>
 
-    <string name="asset_statements" translatable="false">[{\n  \"relation\": [\"delegate_permission/common.handle_all_urls\"],\n  \"target\": {\n    \"namespace\": \"web\",\n    \"site\": \"http://jinaplus.github.io\",\n  }\n}]</string>
+    <string name="asset_statements" translatable="false">[{\n  \"relation\": [\"delegate_permission/common.handle_all_urls\"],\n  \"target\": {\n    \"namespace\": \"web\",\n    \"site\": \"https://jinaplus.github.io\",\n  }\n}]</string>
 
     <string name="text_type">Choose a text type</string>
     <string-array name="text_types">
