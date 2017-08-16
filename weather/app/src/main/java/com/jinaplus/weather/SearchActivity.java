@@ -1,11 +1,12 @@
 package com.jinaplus.weather;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import java.util.Collections;
@@ -16,6 +17,8 @@ import java.util.TreeSet;
  */
 
 public class SearchActivity extends AppCompatActivity {
+    private static final String TAG = SearchActivity.class.getSimpleName();
+
     private WebView webView;
     private TreeSet<String> localAarray = new TreeSet<>();
 
@@ -31,17 +34,20 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         webView = (WebView) findViewById(R.id.wv_search);
+        webView.setWebViewClient(new WebViewClient());
         handleIntent();
     }
 
     private void handleIntent() {
         Intent appLinkIntent = getIntent();
-        Collections.addAll(localAarray, new String[]{"seoul", "inchoen", "busan"});
+        Collections.addAll(localAarray, new String[]{"seoul", "incheon", "busan", "kyungki", "deagu", "deajeon"});
         // ATTENTION: This was auto-generated to handle app links.
         String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
-        if (appLinkData != null) {
-            String local = appLinkData.getLastPathSegment();
+        String data = appLinkIntent.getDataString();
+        if (Intent.ACTION_VIEW.equals(appLinkAction) && data != null) {
+            String local = data.substring(data.lastIndexOf("/") + 1);
+            Log.i(TAG, "local = " + local);
+            Log.i(TAG, "appLinkIntent.getData() = " + appLinkIntent.getData().toString());
             showWeather(local);
         }
     }
